@@ -2,14 +2,15 @@ var React = require('react');
 var ReactDOM = require('react-dom');
 var Card = require('./card');
 
-var List = function() {
-	var cards = [];
-	for(var i=0;i<3;i++) {
-		cards.push(<Card />)
-	};
+var List = function(props) {
 	return (
 		<div className="list">
-			{cards}
+			<div className="list_title">
+				{props.title}
+			</div>
+			<div className="list_cards">
+				{props.cards}
+			</div>
 		</div>
 	)
 };
