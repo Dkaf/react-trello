@@ -28,8 +28,8 @@ var List = React.createClass({
 				<div className="list_cards">
 					{this.props.cards}
 				</div>
-				<form onSubmit={this.onAddSubmit}>
-					<Input type="text" placeholder="New card" onChange={this.onAddInputChanged}/>
+				<form onSubmit={this.props.onSubmit}>
+					<Input type="text" placeholder="New card" onChange={this.props.onChange}/>
 				</form>
 			</div>
 		);
