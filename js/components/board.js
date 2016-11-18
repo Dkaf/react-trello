@@ -1,6 +1,22 @@
-var React = require('react');
-var ReactDOM = require('react-dom');
-var List = require('./list');
+const React = require('react');
+const ReactDOM = require('react-dom');
+const ListContainer = require('./list_container');
+
+let listArray = [
+	{
+		title: 'List One'
+	},
+	{
+		title: 'List Two'
+	},
+	{
+		title: 'List Three'
+	}
+];
+
+let listElements = listArray.map(list =>
+	<ListContainer key={list.id} title={list.title} />
+);
 
 var Board = function(props) {
 	Board.defaultProps = { title: 'title' }
@@ -12,7 +28,7 @@ var Board = function(props) {
 			</div>
 
 			<div className="board_list_titles">
-				{props.lists}
+				{listElements}
 			</div>
 		</div>
 	)

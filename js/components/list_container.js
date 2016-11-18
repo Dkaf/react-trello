@@ -1,9 +1,9 @@
-var React = require('react');
-var ReactDOM = require('react-dom');
-var List = require('./list');
+const React = require('react');
+const ReactDOM = require('react-dom');
+const List = require('./list');
 
 
-var ListContainer = React.createClass({
+let ListContainer = React.createClass({
 	getInitialState: function() {
 		return {
 			inputText: '',
@@ -12,20 +12,19 @@ var ListContainer = React.createClass({
 	},
 
 	onAddInputChanged: function(e) {
-		console.log('input changed');
 		this.setState({
-			inputText: this.value
+			inputText: e.target.value
 		});
-		console.log(this.state.inputText);
 	},
 
 	onAddSubmit: function(e) {
 		e.preventDefault();
 		console.log('form submitted');
 		this.setState({
-			cards: this.state.cards.push(this.state.inputText)
+			cards: this.state.cards.concat(this.state.inputText)
 		});
 		console.log(this.state.cards);
+		e.target.reset();
 	},
 
 	render: function() {

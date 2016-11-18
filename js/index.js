@@ -1,20 +1,14 @@
 require('babel-polyfill');
-var React = require('react');
-var ReactDOM = require('react-dom');
+const React = require('react');
+const ReactDOM = require('react-dom');
 
-var Board = require('./components/board');
-var ListContainer = require('./components/list_container');
-var Card = require('./components/card');
+const Board = require('./components/board');
+const ListContainer = require('./components/list_container');
+const Card = require('./components/card');
 
-var cardOne = <Card text="test card one" />;
-var cardTwo = <Card text="test card two" />;
-var cardThree = <Card text="test card three" />;
-var cardFour = <Card text="test card four" />;
 
-var listOne = <ListContainer title="list one" cards= {[cardOne, cardTwo]} />;
-var listTwo = <ListContainer title="list two" cards= {[cardThree, cardFour]} />;
 
-var boardOne = <Board title="board one" lists= {[listOne, listTwo]}/>;
+let boardOne = <Board title="board one" />;
 
 document.addEventListener('DOMContentLoaded', function() {
     ReactDOM.render(boardOne, document.getElementById('app'));
