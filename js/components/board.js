@@ -3,13 +3,13 @@ const ReactDOM = require('react-dom');
 const ListContainer = require('./list_container');
 
 let listArray = [
-	{
+	0:{
 		title: 'List One'
 	},
-	{
+	1:{
 		title: 'List Two'
 	},
-	{
+	2:{
 		title: 'List Three'
 	}
 ];

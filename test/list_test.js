@@ -22,10 +22,8 @@ describe('List component', function() {
 		cards.type.should.equal('div');
 
 		let form = result.props.children[2];
-		console.log(form.props.children)
 		form.props.should.have.property('onSubmit');
-		form.props.children.type.should.equal('input');
-
-
+		form.props.children.props.should.have.property('placeholder');
+		form.props.children.props.should.have.property('onChange');
 	});
 });
